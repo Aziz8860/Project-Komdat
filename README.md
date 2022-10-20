@@ -1,9 +1,9 @@
-# Aplikasi Web "XYZ"
+# Aplikasi Web Jitsi Meet
 
 
 ## Sekilas Tentang
 
-Deskripsi singkat tentang aplikasi tsb.
+Jitsi adalah kumpulan proyek Open Source yang menyediakan layanan konferensi video canggih yang aman, mudah digunakan, dan mudah di-host sendiri.
 
 
 ## Instalasi

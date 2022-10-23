@@ -1,5 +1,5 @@
 # Aplikasi Web Jitsi Meet
-
+![Jitsi Logo](https://hossted.com/wp-content/uploads/2022/01/7277e5d4a5401b9350bf9ba8491294daf235a106.png)
 
 ## Sekilas Tentang
 

@@ -27,8 +27,7 @@ Proyek Jitsi awalnya dimulai dengan Jitsi Desktop (sebelumnya dikenal sebagai SI
 
 ### Instalasi Custom Domain (Opsional)
 - Siapkan custom domain yang telah dimiliki dari suatu provider (dalam hal ini kami menggunakan IDCloudHost)
-- Masuk ke konfigurasi DNS Manager, kemudian **Add Record** dengan detail Type A Record, TTL 1800, dan isi RData dengan Public IP yang telah didapatkan dari VPS. <br>
-<img src="https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(9).png" width="450">
+- Masuk ke konfigurasi DNS Manager, kemudian **Add Record** dengan detail Type A Record, TTL 1800, dan isi RData dengan Public IP yang telah didapatkan dari VPS. <br> <img src="https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(9).png" width="450">
 - Custom domain siap digunakan.
 
 ### Langkah instalasi dalam CLI <sup>[1]</sup>

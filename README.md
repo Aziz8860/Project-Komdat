@@ -12,15 +12,23 @@ Proyek Jitsi awalnya dimulai dengan Jitsi Desktop (sebelumnya dikenal sebagai SI
 - Registrasi terlebih dahulu pada [AWS](https://aws.amazon.com/)
 - Setelah berhasil login, pilih layanan **Lightsail**
 - Pilih create instance
+![Create Instance](/screenshot/SS%20(1).png)
 - Pilih konfigurasi **Linux/Unix**, **OS Only -> Ubuntu**. Kemudian, pilih instance plan **$5 USD** (gratis 3 bulan pertama) dengan spesifikasi 1 GB Memory, 1 vCPU, 40 GB SSD Storage, dan 2 TB Transfer. Kemudian, klik **Create Instance**.
-- Jika berhasil, maka akan tampil instance yang sudah dibuat.
+![Create Instance 2](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(2).png)
+![Create Instance 3](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(3).png)
+- Jika berhasil, maka akan tampil instance yang sudah dibuat. <br>
+![Instance Selesai](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(4).png)
 - Pada tab **Networking**, jangan lupa untuk setting Public IP menjadi **Static** supaya tidak berubah-ubah ketika instance di-reboot atau di-stop.
+![IP Static](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(5).png)
 - Pada tab **Connect**, klik **Connect using SSH** untuk mengakses instance.
+![Akses Instance](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(6).png)
 - Instance siap digunakan.
+<img src="https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(7).png" width="450">
 
 ### Instalasi Custom Domain (Opsional)
 - Siapkan custom domain yang telah dimiliki dari suatu provider (dalam hal ini kami menggunakan IDCloudHost)
-- Masuk ke konfigurasi DNS Manager, kemudian **Add Record** dengan detail Type A Record, TTL 1800, dan isi RData dengan Public IP yang telah didapatkan dari VPS.
+- Masuk ke konfigurasi DNS Manager, kemudian **Add Record** dengan detail Type A Record, TTL 1800, dan isi RData dengan Public IP yang telah didapatkan dari VPS. <br>
+<img src="https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(9).png" width="450">
 - Custom domain siap digunakan.
 
 ### Langkah instalasi dalam CLI <sup>[1]</sup>
@@ -32,6 +40,7 @@ sudo apt update
 # Install nginx
 sudo apt install nginx
 ```
+![Nginx Installed](https://raw.githubusercontent.com/Aziz8860/Project-Komdat/main/screenshot/SS%20(8).png)
 - Kemudian install `apt-transport-https`, `apt-add-repository universe`, dan ditutup dengan update setiap package version.
 ```diff
 # Ensure support for apt repositories served via HTTPS
@@ -70,7 +79,8 @@ sudo apt update
   - `10000 UDP` => For General Network Audio/Video Meetings. **Required**
   - `22 TCP` => For Accessing your Server using SSH (change the port accordingly if it's not 22). **Required**
   - `3478 UDP` => For querying the stun server (coturn, optional, needs config.js change to enable it).
-  - `5349 TCP` => For fallback network video/audio communications over TCP (when UDP is blocked for example), served by coturn. **Required**
+  - `5349 TCP` => For fallback network video/audio communications over TCP (when UDP is blocked for example), served by coturn. **Required** <br>
+![Setting Fiewwall](/screenshot/SS%20(10).png)
 - Install Jitsi Meet. Ketika instalasi, untuk men-generate TLS/SSL certificate pilih **Let's Encrypt** dan masukkan hostname dengan domain yang telah disiapkan.
 ```diff
 # jitsi-meet installation
@@ -97,20 +107,23 @@ systemctl show --property DefaultTasksMax
 
 ## Cara Pemakaian
 
-- Tampilan aplikasi web
-
+- Tampilan aplikasi web <br>
+![Tampilan Web](/screenshot/SS%20(11).png)
 - Fungsi-fungsi utama
   - Online video conference dengan gratis dan aman
   - Share link meet untuk mengundang participant
   - Recording
 - Percobaan dengan data real dan screenshot
+![Percobaan 1](/screenshot/SS%20(12).png)
+![Percobaan 2](/screenshot/SS%20(14).png)
+![Percobaan 3](/screenshot/SS%20(13).png)
 
 
 
 ## Pembahasan
 
 - Kelebihan Aplikasi
-  - Open source dan dukungan komunitas yang luas
+  - Open source video conference dan dukungan komunitas yang luas
   - User friendly
   - Jitsi menggunakan *hop-by-hop encryption* untuk melindungi konferensi video di mana setiap tahap panggilan video dienkripsi <sup>[2]</sup>
 - Kekurangan <sup>[3]</sup>
